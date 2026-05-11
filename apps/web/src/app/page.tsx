@@ -800,7 +800,7 @@ function CtaFinal() {
                 Testar grátis por 7 dias <ArrowRight size={16} />
               </Link>
               <a
-                href="https://wa.me/5511999999999"
+                href="https://wa.me/5511963215580"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white/10 border border-white/30 text-white font-semibold rounded-xl hover:bg-white/20 transition-colors text-base"
@@ -896,7 +896,7 @@ function Footer() {
             <ul className="space-y-3">
               {[
                 { icon: MapPin, text: "São Paulo, SP — Brasil" },
-                { icon: Phone, text: "(11) 99999-9999" },
+                { icon: Phone, text: "+55 11 96321-5580" },
                 { icon: Mail, text: "contato@nexofoods.com.br" },
               ].map(({ icon: Icon, text }) => (
                 <li key={text} className="flex items-center gap-2.5 text-sm">
@@ -907,7 +907,7 @@ function Footer() {
             </ul>
 
             <a
-              href="https://wa.me/5511999999999"
+              href="https://wa.me/5511963215580"
               target="_blank"
               rel="noreferrer"
               className="mt-5 inline-flex items-center justify-center gap-2 w-full py-2.5 bg-green-500 hover:bg-green-400 text-white text-sm font-semibold rounded-xl transition-colors"
