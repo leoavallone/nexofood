@@ -16,7 +16,7 @@ Este documento resume todas as melhorias e correções feitas recentemente no pr
   - Refatorada para incluir **Breadcrumbs dinâmicos** gerados a partir do `pathname`, resolvendo o problema de falta de contexto/título na parte superior da página.
 
 ## 📊 Módulo Dashboard (`dashboard/page.tsx`)
-- Adicionada saudação personalizada com base na hora do dia usando o nome do usuário ativo (via Clerk).
+- Adicionada saudação personalizada com base na hora do dia.
 - Implementado um widget de **Alertas Financeiros**, mostrando de forma visual (com cores) as contas vencidas, contas que vencem hoje e as que vencem nos próximos 7 dias.
 
 ## 👥 Módulo Clientes (`clientes-view.tsx`)

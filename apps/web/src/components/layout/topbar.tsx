@@ -1,7 +1,6 @@
 "use client";
 
-import { UserButton, OrganizationSwitcher } from "@clerk/nextjs";
-import { Bell, Home, ChevronRight } from "lucide-react";
+import { Bell, Home, ChevronRight, Building2, UserCircle } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 // Mapa de segmentos de URL para labels legíveis
@@ -61,22 +60,10 @@ export function Topbar() {
       </div>
 
       <div className="flex items-center gap-3">
-        {/* Org switcher (troca entre empresas/tenants) */}
-        <OrganizationSwitcher
-          hidePersonal
-          appearance={{
-            elements: {
-              rootBox: "flex items-center",
-              organizationSwitcherTrigger:
-                "flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm text-slate-300 hover:bg-white/5 border border-white/10 transition-colors",
-              organizationSwitcherPopoverCard:
-                "bg-slate-800 border border-white/10 shadow-2xl",
-              organizationSwitcherPopoverActionButton:
-                "text-slate-300 hover:bg-slate-700",
-              organizationPreviewMainIdentifier: "text-white",
-            },
-          }}
-        />
+        <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm text-slate-300 border border-white/10">
+          <Building2 className="h-4 w-4 text-amber-400" />
+          <span>NexoFoods</span>
+        </div>
 
         {/* Notificações (placeholder) */}
         <button
@@ -86,16 +73,9 @@ export function Topbar() {
           <Bell className="h-5 w-5" />
         </button>
 
-        {/* Avatar do usuário */}
-        <UserButton
-          appearance={{
-            elements: {
-              avatarBox: "h-8 w-8 ring-2 ring-white/10",
-              userButtonPopoverCard: "bg-slate-800 border border-white/10 shadow-2xl",
-              userButtonPopoverActionButton: "text-slate-300 hover:bg-slate-700",
-            },
-          }}
-        />
+        <div className="h-8 w-8 rounded-full bg-slate-800 ring-2 ring-white/10 flex items-center justify-center">
+          <UserCircle className="h-5 w-5 text-slate-300" />
+        </div>
       </div>
     </header>
   );

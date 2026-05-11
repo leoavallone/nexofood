@@ -12,7 +12,7 @@ export enum Modulo {
 
 /**
  * Permissões disponíveis no sistema (RBAC).
- * Complementa os papéis do Clerk com controle granular de funcionalidades.
+ * Complementa os papéis do sistema com controle granular de funcionalidades.
  */
 export enum Permissao {
   // Core
@@ -34,7 +34,7 @@ export enum Permissao {
 
 /**
  * Papéis padrão mapeados para permissões.
- * No Clerk, papéis são definidos por organização.
+ * Papéis são definidos por organização.
  */
 export const PERMISSOES_POR_PAPEL: Record<string, Permissao[]> = {
   admin: Object.values(Permissao), // Admin tem tudo

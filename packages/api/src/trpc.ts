@@ -9,9 +9,9 @@ import type { TenantPrismaClient } from "@gastrosys/db";
 // ============================================================
 
 export interface TRPCContext {
-  /** ID do usuário autenticado (userId do Clerk) */
+  /** ID do usuário ativo */
   userId: string | null;
-  /** ID do tenant/organização ativa (orgId do Clerk) */
+  /** ID do tenant/organização ativa */
   tenantId: string | null;
   /** PrismaClient com isolamento de tenant pré-configurado */
   db: TenantPrismaClient | typeof prisma;

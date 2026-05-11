@@ -1,7 +1,7 @@
 "use client";
 
-import { OrganizationList } from "@clerk/nextjs";
-import { UtensilsCrossed } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, UtensilsCrossed } from "lucide-react";
 
 export function OnboardingView() {
   return (
@@ -23,11 +23,13 @@ export function OnboardingView() {
         </p>
       </div>
 
-      <OrganizationList
-        hidePersonal
-        afterCreateOrganizationUrl="/dashboard"
-        afterSelectOrganizationUrl="/dashboard"
-      />
+      <Link
+        href="/dashboard"
+        className="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-5 py-2.5 text-sm font-semibold text-slate-950 transition-colors hover:bg-amber-400"
+      >
+        Acessar empresa
+        <ArrowRight className="h-4 w-4" />
+      </Link>
     </div>
   );
 }

@@ -1,7 +1,6 @@
 "use client";
 
-import { OrganizationProfile } from "@clerk/nextjs";
-import { Settings } from "lucide-react";
+import { Building2, Mail, Phone, Settings } from "lucide-react";
 
 export function ConfiguracoesView() {
   return (
@@ -15,25 +14,34 @@ export function ConfiguracoesView() {
         </p>
       </div>
 
-      <div>
-        <OrganizationProfile
-          appearance={{
-            variables: {
-              colorBackground: "#1e293b",
-              colorInputBackground: "#0f172a",
-              colorText: "#f8fafc",
-              colorTextSecondary: "#94a3b8",
-              colorPrimary: "#f59e0b",
-              borderRadius: "0.75rem",
-            },
-            elements: {
-              card: "bg-slate-800 border-slate-700 shadow-none",
-              navbar: "bg-slate-800/50 border-slate-700",
-              navbarButton: "text-slate-400 hover:text-white",
-              navbarButtonActive: "text-white bg-slate-700",
-            },
-          }}
-        />
+      <div className="max-w-2xl rounded-xl border border-slate-700 bg-slate-800 p-6">
+        <div className="flex items-center gap-3 border-b border-slate-700 pb-5">
+          <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-amber-500/15">
+            <Building2 className="h-5 w-5 text-amber-400" />
+          </div>
+          <div>
+            <h2 className="font-semibold text-white">NexoFoods</h2>
+            <p className="text-sm text-slate-400">Ambiente principal</p>
+          </div>
+        </div>
+
+        <div className="mt-5 grid gap-4 sm:grid-cols-2">
+          <div className="rounded-lg border border-slate-700 bg-slate-900/50 p-4">
+            <div className="flex items-center gap-2 text-sm font-medium text-slate-300">
+              <Mail className="h-4 w-4 text-amber-400" />
+              E-mail
+            </div>
+            <p className="mt-2 text-sm text-slate-500">Configure no cadastro da empresa</p>
+          </div>
+
+          <div className="rounded-lg border border-slate-700 bg-slate-900/50 p-4">
+            <div className="flex items-center gap-2 text-sm font-medium text-slate-300">
+              <Phone className="h-4 w-4 text-amber-400" />
+              Telefone
+            </div>
+            <p className="mt-2 text-sm text-slate-500">Configure no cadastro da empresa</p>
+          </div>
+        </div>
       </div>
     </div>
   );

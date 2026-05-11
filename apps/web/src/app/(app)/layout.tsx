@@ -1,31 +1,23 @@
 export const dynamic = "force-dynamic";
 
-import { auth } from "@clerk/nextjs/server";
-import { redirect } from "next/navigation";
 import { prisma } from "@gastrosys/db";
 import { Sidebar } from "@/components/layout/sidebar";
 import { Topbar } from "@/components/layout/topbar";
 import { Modulo } from "@gastrosys/types";
+
+const DEMO_TENANT_REF = "demo-tenant";
 
 /**
  * Layout protegido: envolve todas as rotas do app com Sidebar + Topbar.
  * Busca os módulos ativos do tenant para renderizar a sidebar corretamente.
  */
 export default async function AppLayout({ children }: { children: React.ReactNode }) {
-  const { userId, orgId } = await auth();
-
-  // Redireciona se não autenticado
-  if (!userId) redirect("/sign-in");
-
-  // Se não tem org selecionada, redireciona para criação/seleção
-  if (!orgId) redirect("/onboarding");
-
   // Busca o tenant e seus módulos ativos
   let modulosAtivos: Modulo[] = [Modulo.CORE];
 
   try {
     const tenant = await prisma.tenant.findUnique({
-      where: { clerkOrgId: orgId },
+      where: { clerkOrgId: DEMO_TENANT_REF },
       include: { modulos: { where: { ativo: true } } },
     });
 
@@ -55,4 +47,3 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     </div>
   );
 }
-

@@ -1,7 +1,9 @@
 import { createCallerFactory } from "@gastrosys/api";
 import { appRouter } from "@gastrosys/api";
-import { auth } from "@clerk/nextjs/server";
-import { createTenantClient, prisma } from "@gastrosys/db";
+import { createTenantClient } from "@gastrosys/db";
+
+const DEMO_USER_ID = "demo-user";
+const DEMO_TENANT_ID = "demo-tenant";
 
 /**
  * Caller do tRPC para uso em Server Components e Server Actions.
@@ -14,12 +16,10 @@ import { createTenantClient, prisma } from "@gastrosys/db";
  * ```
  */
 export async function createServerCaller() {
-  const { userId, orgId } = await auth();
-
   const createCaller = createCallerFactory(appRouter);
   return createCaller({
-    userId,
-    tenantId: orgId ?? null,
-    db: orgId ? createTenantClient(orgId) : prisma,
+    userId: DEMO_USER_ID,
+    tenantId: DEMO_TENANT_ID,
+    db: createTenantClient(DEMO_TENANT_ID),
   });
 }

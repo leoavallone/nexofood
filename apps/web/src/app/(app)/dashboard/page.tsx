@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { auth, currentUser } from "@clerk/nextjs/server";
 import { createServerCaller } from "@/lib/trpc/server";
 import { DashboardCards } from "@/components/core/dashboard/dashboard-cards";
 import { DashboardSkeleton } from "@/components/core/dashboard/dashboard-skeleton";
@@ -20,8 +19,7 @@ function getGreeting() {
 }
 
 export default async function DashboardPage() {
-  const user = await currentUser();
-  const firstName = user?.firstName ?? "gestor";
+  const firstName = "gestor";
   const greeting = getGreeting();
 
   return (

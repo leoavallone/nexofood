@@ -1,5 +1,6 @@
-import { SignIn } from "@clerk/nextjs";
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight, LockKeyhole } from "lucide-react";
 
 export const metadata: Metadata = { title: "Entrar" };
 
@@ -15,24 +16,25 @@ export default function SignInPage() {
           <p className="text-slate-400 mt-2 text-sm">ERP para Restaurantes e Food Service</p>
         </div>
 
-        <SignIn
-          appearance={{
-            elements: {
-              rootBox: "shadow-2xl",
-              card: "bg-slate-800 border border-slate-700 shadow-2xl",
-              headerTitle: "text-white",
-              headerSubtitle: "text-slate-400",
-              formFieldLabel: "text-slate-300",
-              formFieldInput:
-                "bg-slate-700 border-slate-600 text-white placeholder-slate-400 focus:border-amber-400",
-              formButtonPrimary:
-                "bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold",
-              footerActionLink: "text-amber-400 hover:text-amber-300",
-              identityPreviewText: "text-white",
-              identityPreviewEditButton: "text-amber-400",
-            },
-          }}
-        />
+        <div className="w-[min(92vw,24rem)] rounded-xl border border-slate-700 bg-slate-800 p-6 shadow-2xl">
+          <div className="mb-5 flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/15">
+              <LockKeyhole className="h-5 w-5 text-amber-400" />
+            </div>
+            <div>
+              <h2 className="font-semibold text-white">Acesso liberado</h2>
+              <p className="text-sm text-slate-400">Ambiente pronto para demonstração</p>
+            </div>
+          </div>
+
+          <Link
+            href="/dashboard"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-amber-500 px-4 py-2.5 text-sm font-semibold text-slate-950 transition-colors hover:bg-amber-400"
+          >
+            Entrar no sistema
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
       </div>
     </div>
   );

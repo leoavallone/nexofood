@@ -1,7 +1,6 @@
 "use client";
 
-import { OrganizationProfile } from "@clerk/nextjs";
-import { UserCog } from "lucide-react";
+import { ShieldCheck, UserCog } from "lucide-react";
 
 export function UsuariosView() {
   return (
@@ -15,25 +14,18 @@ export function UsuariosView() {
         </p>
       </div>
 
-      <div className="[&_.cl-card]:bg-slate-800 [&_.cl-card]:border-slate-700 [&_.cl-rootBox]:w-full">
-        <OrganizationProfile
-          appearance={{
-            variables: {
-              colorBackground: "#1e293b",
-              colorInputBackground: "#0f172a",
-              colorText: "#f8fafc",
-              colorTextSecondary: "#94a3b8",
-              colorPrimary: "#f59e0b",
-              borderRadius: "0.75rem",
-            },
-            elements: {
-              card: "bg-slate-800 border-slate-700 shadow-none",
-              navbar: "bg-slate-800/50 border-slate-700",
-              navbarButton: "text-slate-400 hover:text-white",
-              navbarButtonActive: "text-white bg-slate-700",
-            },
-          }}
-        />
+      <div className="max-w-2xl rounded-xl border border-slate-700 bg-slate-800 p-6">
+        <div className="flex items-start gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/15">
+            <ShieldCheck className="h-5 w-5 text-amber-400" />
+          </div>
+          <div>
+            <h2 className="font-semibold text-white">Gestor principal</h2>
+            <p className="mt-1 text-sm text-slate-400">
+              O controle de usuários está preparado para receber autenticação dedicada em uma próxima etapa.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
