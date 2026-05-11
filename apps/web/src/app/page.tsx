@@ -694,13 +694,13 @@ function Pricing() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch max-w-5xl mx-auto">
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative rounded-2xl p-8 flex flex-col ${
+              className={`relative rounded-2xl p-8 flex h-full flex-col ${
                 plan.featured
-                  ? "bg-white border-2 border-orange-500 shadow-2xl shadow-orange-100 md:-mt-4 md:pb-12"
+                  ? "bg-white border-2 border-orange-500 shadow-2xl shadow-orange-100"
                   : "bg-white border border-slate-200 shadow-sm"
               }`}
             >
